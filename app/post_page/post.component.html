@@ -1,0 +1,23 @@
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of data | filter:searchText" (click)="redirect(i.id)">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.body}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

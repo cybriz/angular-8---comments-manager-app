@@ -1,0 +1,54 @@
+<div><input type="button" value="Back" onclick="history.back(-1)" style="float:left; margin:10px;"/></div>
+<div class="container text-center">
+  <h1>{{titlePost}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of singlePostList">
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.body}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container text-center" >
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-data">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching...">
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let i of commentList | filter:searchText">
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.body}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
